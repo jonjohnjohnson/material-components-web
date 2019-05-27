@@ -117,16 +117,11 @@ export class MDCSlider extends MDCComponent<MDCSliderFoundation> {
       },
       setTrackStyleProperty: (propertyName, value) => this.track_.style.setProperty(propertyName, value),
       setMarkerValue: (value) => this.pinValueMarker_.innerText = value.toLocaleString(),
-      appendTrackMarkers: (step, max, min) => {
-        // TODO iterate on args, but for now explicit to test with 
+      setTrackMarkers: (step, max, min) => {
+        // TODO iterate on args, but for now explicit to test with
         this.trackMarkerContainer_.style.setProperty('--mdc-slider-tick-step', step.toLocaleString());
         this.trackMarkerContainer_.style.setProperty('--mdc-slider-tick-max', max.toLocaleString());
         this.trackMarkerContainer_.style.setProperty('--mdc-slider-tick-min', min.toLocaleString());
-      },
-      removeTrackMarkers: () => {
-        this.trackMarkerContainer_.style.setProperty('--mdc-slider-tick-step', '');
-        this.trackMarkerContainer_.style.setProperty('--mdc-slider-tick-max', '');
-        this.trackMarkerContainer_.style.setProperty('--mdc-slider-tick-min', '');
       },
       isRTL: () => getComputedStyle(this.root_).direction === 'rtl',
     };

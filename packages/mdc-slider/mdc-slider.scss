@@ -80,7 +80,6 @@
     --mdc-slider-tick-step: 1;
     --mdc-slider-tick-width: 2px;
     --mdc-slider-tick-count: calc((var(--mdc-slider-tick-max) - var(--mdc-slider-tick-min)) / var(--mdc-slider-tick-step));
-    display: flex;
     height: 100%;
     visibility: hidden;
     background:

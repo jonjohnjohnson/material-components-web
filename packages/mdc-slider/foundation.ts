@@ -93,8 +93,7 @@ export class MDCSliderFoundation extends MDCFoundation<MDCSliderAdapter> {
       setThumbContainerStyleProperty: () => undefined,
       setTrackStyleProperty: () => undefined,
       setMarkerValue: () => undefined,
-      appendTrackMarkers: () => undefined,
-      removeTrackMarkers: () => undefined,
+      setTrackMarkers: () => undefined,
       isRTL: () => false,
     };
     // tslint:enable:object-literal-sort-keys
@@ -174,10 +173,7 @@ export class MDCSliderFoundation extends MDCFoundation<MDCSliderAdapter> {
 
   setupTrackMarker() {
     if (this.isDiscrete_ && this.hasTrackMarker_ && this.getStep() !== 0) {
-      const min = this.getMin();
-      const max = this.getMax();
-      const step = this.getStep();
-      this.adapter_.appendTrackMarkers(step, max, min);
+      this.adapter_.setTrackMarkers(this.getStep(), this.getMax(), this.getMin());
     }
   }
 

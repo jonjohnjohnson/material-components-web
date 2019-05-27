@@ -137,14 +137,9 @@ export interface MDCSliderAdapter {
   setMarkerValue(value: number): void;
 
   /**
-   * Send track marker setuZ to the track mark container element
+   * Send track markers numbers to setup mark container element
    */
-  appendTrackMarkers(step: number, max: number, min: number): void;
-
-  /**
-   * Removes track markers from the track mark container element
-   */
-  removeTrackMarkers(): void;
+  setTrackMarkers(step: number, max: number, min: number): void;
 
   /**
    * Returns true if the root element is RTL, otherwise false
