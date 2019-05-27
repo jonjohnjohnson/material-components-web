@@ -75,22 +75,24 @@
   }
 
   &__track-marker-container {
-    --mdc-slider-tick-max: 1;
-    --mdc-slider-tick-min: 1;
-    --mdc-slider-tick-step: 1;
-    --mdc-slider-tick-width: 2px;
-    --mdc-slider-tick-count: calc((var(--mdc-slider-tick-max) - var(--mdc-slider-tick-min)) / var(--mdc-slider-tick-step));
+    --slider-tick-max: 1;
+    --slider-tick-min: 1;
+    --slider-tick-step: 1;
+    --slider-tick-width: 2px;
+    --slider-tick-count:
+      calc((var(--slider-tick-max) - var(--slider-tick-min)) / var(--slider-tick-step));
+
     height: 100%;
-    visibility: hidden;
     background:
       linear-gradient(
         to right,
-        var(--mdc-theme-secondary, #018786) var(--mdc-slider-tick-width),
-        transparent 0)
+        var(--mdc-theme-secondary, #018786) var(--slider-tick-width),
+        transparent 0px
+      )
       0px center /
-      calc((100% - var(--mdc-slider-tick-width)) / var(--mdc-slider-tick-count))
-      100% repeat-x
-    ;
+      calc((100% - var(--slider-tick-width)) / var(--slider-tick-count))
+      100% repeat-x;
+    visibility: hidden;
   }
 
   &__thumb-container {
