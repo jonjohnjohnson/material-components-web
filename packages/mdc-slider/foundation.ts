@@ -95,7 +95,6 @@ export class MDCSliderFoundation extends MDCFoundation<MDCSliderAdapter> {
       setMarkerValue: () => undefined,
       appendTrackMarkers: () => undefined,
       removeTrackMarkers: () => undefined,
-      setLastTrackMarkersStyleProperty: () => undefined,
       isRTL: () => false,
     };
     // tslint:enable:object-literal-sort-keys
@@ -178,23 +177,7 @@ export class MDCSliderFoundation extends MDCFoundation<MDCSliderAdapter> {
       const min = this.getMin();
       const max = this.getMax();
       const step = this.getStep();
-      let numMarkers = (max - min) / step;
-
-      // In case distance between max & min is indivisible to step,
-      // we place the secondary to last marker proportionally at where thumb
-      // could reach and place the last marker at max value
-      const indivisible = Math.ceil(numMarkers) !== numMarkers;
-      if (indivisible) {
-        numMarkers = Math.ceil(numMarkers);
-      }
-
-      this.adapter_.removeTrackMarkers();
-      this.adapter_.appendTrackMarkers(numMarkers);
-
-      if (indivisible) {
-        const lastStepRatio = (max - numMarkers * step) / step + 1;
-        this.adapter_.setLastTrackMarkersStyleProperty('flex-grow', String(lastStepRatio));
-      }
+      this.adapter_.appendTrackMarkers(step, max, min);
     }
   }
 
