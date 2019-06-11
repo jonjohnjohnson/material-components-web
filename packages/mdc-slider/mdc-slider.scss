@@ -75,23 +75,7 @@
   }
 
   &__track-marker-container {
-    --slider-tick-max: 1;
-    --slider-tick-min: 1;
-    --slider-tick-step: 1;
-    --slider-tick-width: 2px;
-    --slider-tick-count:
-      calc((var(--slider-tick-max) - var(--slider-tick-min)) / var(--slider-tick-step));
-
     height: 100%;
-    background:
-      linear-gradient(
-        to right,
-        var(--mdc-theme-secondary, #018786) var(--slider-tick-width),
-        transparent 0px
-      )
-      0px center /
-      calc((100% - var(--slider-tick-width)) / var(--slider-tick-count))
-      100% repeat-x;
     visibility: hidden;
   }
 
