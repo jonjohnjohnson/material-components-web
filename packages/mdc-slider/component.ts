@@ -123,11 +123,11 @@ export class MDCSlider extends MDCComponent<MDCSliderFoundation> {
         const maxStr = max.toLocaleString();
         const minStr = min.toLocaleString();
         // keep calculation in css for better rounding/subpixel behavior
-        const markerAmount = '((' + maxStr + ' - ' + minStr + ') / ' + stepStr + ')';
-        const markerWidth = '2px';
-        const markerBkgdImage = 'linear-gradient(to right, currentColor ' + markerWidth + ', transparent 0)';
-        const markerBkgdLayout = '0 center / calc((100% - ' + markerWidth + ') / ' + markerAmount + ') 100% repeat-x';
-        const markerBkgdShorthand = markerBkgdImage + ' ' +  markerBkgdLayout;
+        const markerAmount = `((${maxStr} - ${minStr}) / ${stepStr})`;
+        const markerWidth = `2px`;
+        const markerBkgdImage = `linear-gradient(to right, currentColor ${markerWidth}, transparent 0)`;
+        const markerBkgdLayout = `0 center / calc((100% - ${markerWidth}) / ${markerAmount}) 100% repeat-x`;
+        const markerBkgdShorthand = `${markerBkgdImage} ${markerBkgdLayout}`;
         this.trackMarkerContainer_.style.setProperty('background', markerBkgdShorthand);
       },
       isRTL: () => getComputedStyle(this.root_).direction === 'rtl',
