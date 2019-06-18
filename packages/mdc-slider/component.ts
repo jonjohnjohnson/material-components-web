@@ -119,11 +119,11 @@ export class MDCSlider extends MDCComponent<MDCSliderFoundation> {
       setTrackStyleProperty: (propertyName, value) => this.track_.style.setProperty(propertyName, value),
       setMarkerValue: (value) => this.pinValueMarker_.innerText = value.toLocaleString(),
       setTrackMarkers: (step, max, min) => {
-        const maxString = max.toLocaleString();
-        const minString = max.toLocaleString();
-        const stepString = max.toLocaleString();
+        const stepStr = step.toLocaleString();
+        const maxStr = max.toLocaleString();
+        const minStr = min.toLocaleString();
         // keep calculation in css for better rounding/subpixel behavior
-        const markerAmount = '((' + maxString + ' - ' + minString + ') / ' + stepString + ')';
+        const markerAmount = '((' + maxStr + ' - ' + minStr + ') / ' + stepStr + ')';
         const markerWidth = '2px';
         const markerBkgdImage = 'linear-gradient(to right, currentColor ' + markerWidth + ', transparent 0)';
         const markerBkgdLayout = '0 center / calc((100% - ' + markerWidth + ') / ' + markerAmount + ') 100% repeat-x';
